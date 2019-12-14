@@ -22,14 +22,14 @@ export default {
   },
   methods: {
     saveArticle() {
-      // 通过this.$http访问axios实例
-      this.$http.post("posts", this.article).then(res => {
+      // 通过this.$http访问axios实例，访问新增文章接口
+      this.$http.post("/articles", this.article).then(res => {
         console.log(res.data);
         this.$message({
           message: "文章创建成功",
           type: "success"
         });
-        this.$router.push("/posts/index");
+        this.$router.push("/posts/index"); // 跳转到文章列表
       });
     }
   }

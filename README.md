@@ -88,12 +88,15 @@ npm run serve     // terminal运行项目
 ```
 看到的入口界面，对应的布局在App.vue。App.vue中引入了HelloWorld.vue组件。
 ![6.PNG](/read_img/6.PNG)
+
 然后可以在App.vue中通过下面标签使用组件。
 ```
 <HelloWorld msg="Welcome to Your Vue.js App"/>
 ```
 HelloWorld.vue中有一个动态`msg`
+
 ![7.PNG](/read_img/7.PNG)
+
 views中的页面引入组件可以如下
 ```
 // @ is an alias to /src
@@ -102,14 +105,16 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
 ### 8.模拟后端接口
 新建文件夹api，新建文件index.js，测试后端接口代码
+
 ![8.PNG](/read_img/8.PNG)
+
 ```
 npm i express@next mongoose cors
 ```
-启动后端接口，访问http://localhost:3001/，页面显示hello!
+启动后端接口，访问[http://localhost:3001/](http://localhost:3001/)，页面显示hello!
 ```
 nodemon api
 ```
-此时后端接口启动在http://localhost:3001/，前端接口启动在http://localhost:8080/
+此时后端接口启动在[http://localhost:3001/](http://localhost:3001/)，前端接口启动在[http://localhost:8080/](http://localhost:8080/)
 
 ### 10.在main.js引入axios，创建axios实例

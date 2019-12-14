@@ -22,23 +22,26 @@ export default {
   },
   methods: {
     saveArticle() {
-      // 通过this.$http访问axios实例
-      this.$http.put(`posts/${this.$route.params.id}`, this.article).then(() => {
-        this.$message({
-          message: "文章保存成功",
-          type: "success"
+      // 通过this.$http访问axios实例，访问修改文章接口
+      this.$http
+        .put(`/articles/${this.$route.params.id}`, this.article)
+        .then(() => {
+          this.$message({
+            message: "文章保存成功",
+            type: "success"
+          });
+          this.$router.push("/posts/index");
         });
-        this.$router.push("/posts/index");
-      });
     },
-    fetch(){
+    fetch() {
+      // 访问文章详情接口
       this.$http.get(`/articles/${this.$route.params.id}`).then(res => {
-        this.article = res.data
-      })
+        this.article = res.data;
+      });
     }
   },
-  created(){
-    this.fetch()
+  created() {
+    this.fetch();
   }
 };
 </script>
